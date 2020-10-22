@@ -1,13 +1,25 @@
+// let noteTitle;
+// let noteText;
+// let saveNoteBtn;
+// let newNoteBtn;
+// let noteList;
 var $noteTitle = $(".note-title");
 var $noteText = $(".note-textarea");
 var $saveNoteBtn = $(".save-note");
 var $newNoteBtn = $(".new-note");
 var $noteList = $(".list-container .list-group");
+// if (window.location.pathname === '/notes') {
+//   noteTitle = document.querySelector('.note-title');
+//   noteText = document.querySelector('.note-textarea');
+//   saveNoteBtn = document.querySelector('.save-note');
+//   newNoteBtn = document.querySelector('.new-note');
+//   noteList = document.querySelectorAll('.list-container .list-group');
+// }
 
-// activeNote is used to keep track of the note in the textarea
+// activeNote used to keep track of the notes in textarea
 var activeNote = {};
 
-// A function for getting all notes from the db
+//function for getting all notes from the db
 var getNotes = function () {
   return $.ajax({
     url: "/api/notes",
@@ -15,16 +27,16 @@ var getNotes = function () {
   });
 };
 
-// A function for saving a note to the db
+//function for saving a note to db
 var saveNote = function (note) {
   return $.ajax({
     url: "/api/notes",
-    data: note, // whatever is put in the data is the body
+    data: note, 
     method: "POST"
   });
 };
 
-// BONUS A function for deleting a note from the db
+// BONUS deleting a note
 var deleteNote = function (id) {
   return $.ajax({
     url: "api/notes/" + id,
@@ -131,13 +143,19 @@ var getAndRenderNotes = function () {
     renderNoteList(data);
   });
 };
-
+// const getAndRenderNotes = () => getNotes().then(renderNoteList);
 $saveNoteBtn.on("click", handleNoteSave);
 $noteList.on("click", ".list-group-item", handleNoteView);
 $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
 $noteTitle.on("keyup", handleRenderSaveBtn);
 $noteText.on("keyup", handleRenderSaveBtn);
+// if (window.location.pathname === '/notes') {
+//   saveNoteBtn.addEventListener('click', handleNoteSave);
+//   newNoteBtn.addEventListener('click', handleNewNoteView);
+//   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
+//   noteText.addEventListener('keyup', handleRenderSaveBtn);
+// }
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();

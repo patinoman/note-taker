@@ -1,4 +1,4 @@
-const db = require('../db/mid.js');
+const db = require('../db/notesdb.js');
 const router = require('express').Router();
 
 // gets current notes from server
