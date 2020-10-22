@@ -29,11 +29,11 @@ User must first install Node and Express npm in order to initialize the code.
 
 My deployed [Heroku](https://floating-castle-18084.herokuapp.com/ "Heroku")
 
-![app front page screenshot](/note-taker-screenshot1.PNG?raw=true)
+![app front page screenshot](./note-taker-screenshot1.PNG?raw=true)
 
-![app second page screenshot](/note-taker-screenshot2.PNG?raw=true)
+![app second page screenshot](./note-taker-screenshot2.PNG?raw=true)
 
-![app use screenshot](/note-taker-screenshot3.PNG?raw=true)
+![app use screenshot](./note-taker-screenshot3.PNG?raw=true)
 
 ## License
 
